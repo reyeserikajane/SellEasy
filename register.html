@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="img/icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.9.2/css/flag-icons.min.css"
+    />
+    <title>Register | SellEasy</title>
+  </head>
+  <body class="global-reset login-signup-page">
+    <div class="background">
+      <div></div>
+    </div>
+    <div class="form__signup-container">
+      <div class="form-container__logo">
+        <img
+          src="img/logo.png"
+          alt="Your Logo"
+        />
+      </div>
+      <div class="toggle-buttons">
+        <button
+          id="email-button"
+          class="active"
+        >
+          Email
+        </button>
+        <button id="phone-button">Phone</button>
+      </div>
+
+      <!-- <h1 class="form-container__heading">Reset Password</h1> -->
+      <!-- Email Section -->
+      <div
+        id="email-form"
+        class="signup-form"
+      >
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="text"
+            id="phone"
+            name="phone"
+            required
+            placeholder="Please input your email"
+          />
+        </div>
+
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="number"
+            id="phone"
+            name="phone"
+            required
+            placeholder="Email OTP"
+            pattern="[0-9]{6}"
+          />
+        </div>
+
+        <div class="form__group">
+          <label
+            class="email-text-number"
+            for="phone-number"
+            >Please enter your phone number</label
+          >
+          <span
+            class="ph-flag"
+            id="flag-image"
+          ></span>
+          <input
+            class="form__input"
+            type="tel"
+            id="phone-number"
+            name="verification"
+            required
+            value="(+63) "
+          />
+        </div>
+
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="password"
+            id="newPassword"
+            name="newPassword"
+            required
+            placeholder="Please enter your password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+          />
+        </div>
+
+        <div class="form__terms-group">
+          <label
+            for="terms"
+            class="terms-label"
+          >
+            <input
+              type="checkbox"
+              id="terms"
+              required
+            />
+            <p>
+              By registrering I agree to the <a href="#">Terms of Use</a> and
+              <a href="#">Privacy</a>.
+            </p>
+          </label>
+        </div>
+
+        <button
+          class="form__next-button"
+          type="submit"
+        >
+          Next Step
+        </button>
+      </div>
+
+      <!-- Phone Section -->
+      <div
+        id="phone-form"
+        class="signup-form"
+      >
+        <div class="form__group">
+          <label
+            class="email-text-number"
+            for="phone-number"
+            >Please enter your phone number</label
+          >
+          <span
+            class="ph-flag"
+            id="flag-image"
+          ></span>
+          <input
+            class="form__input"
+            type="tel"
+            id="phone-number"
+            name="verification"
+            required
+            value="(+63)"
+            pattern="[0-9]{10}"
+            title="Please type a valid number"
+          />
+        </div>
+
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="text"
+            id="verification"
+            name="verification"
+            required
+            placeholder="Verification Code"
+          />
+        </div>
+
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="password"
+            id="newPassword"
+            name="newPassword"
+            required
+            placeholder="Please enter your password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters"
+          />
+        </div>
+        <div class="form__group">
+          <input class="spacing">
+        </div>
+
+        <div class="form__terms-group">
+          <label
+            for="terms"
+            class="terms-label"
+          >
+            <input
+              type="checkbox"
+              id="terms"
+              required
+            />
+            <p>
+              By registrering I agree to the <a href="#">Terms of Use</a> and
+              <a href="#">Privacy</a>
+            </p>
+          </label>
+        </div>
+
+        <button
+          class="form__next-button"
+          type="submit"
+        >
+          Next Step
+        </button>
+
+        
+      </div>
+
+      <p class="form-container__signup">
+        Have an account?
+        <a
+          class="form-container__signup-link"
+          href="./index.html"
+          >Log In</a
+        >
+      </p>
+
+    </div>
+
+    <footer class="copyright">
+      &copy
+      <script type="text/javascript">
+        document.write(new Date().getFullYear());
+      </script>
+      Copyright SellEasy
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

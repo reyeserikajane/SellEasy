@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <style>
+      .phone-input-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .phone-input {
+        padding-left: 40px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 300px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: auto 80%;
+      }
+
+      .ph-flag {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        width: 30px;
+        height: 20px;
+        background-image: url("./ph.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone-input-container">
+      <span
+        class="ph-flag"
+        id="flag-image"
+      ></span>
+      <input
+        type="text"
+        class="phone-input"
+        id="phone-input"
+        placeholder="Enter your phone number"
+      />
+    </div>
+
+    <script>
+      const flagImage = document.getElementById("flag-image");
+      const phoneInput = document.getElementById("phone-input");
+
+      // Function to update the flag based on the selected country code
+      function updateFlag() {
+        const selectedCode = phoneInput.value.split(" ")[0];
+        if (selectedCode === "+63") {
+          flagImage.className = "ph-flag";
+        } else {
+          flagImage.className = "flag"; // Default flag class
+        }
+      }
+
+      // Attach an event listener to the input field
+      phoneInput.addEventListener("input", updateFlag);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,454 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../fonts/HelveticaNeue.ttf") format("truetype");
+}
+:root {
+  --primary-color: #ff7116;
+  --color-white: #fff;
+  --font-primary: "Helvetica Neue", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  font: inherit;
+  border: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  font-size: 48%;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 10px;
+  overflow: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.login-signup-page {
+  font-family: var(--font-primary);
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.6;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  width: 80rem;
+  padding: 5rem 10rem;
+  background-color: var(--color-white);
+  box-shadow: 0px 0.4rem 2rem 0px rgba(0, 0, 0, 0.1019607843);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-inline: 20px;
+}
+
+.form__signup-container {
+  width: 80rem;
+  /* height: 87rem; */
+  padding: 5rem 10rem;
+  background-color: var(--color-white);
+  box-shadow: 0px 0.4rem 2rem 0px rgba(0, 0, 0, 0.1019607843);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-inline: 20px;
+}
+
+.form-container__logo {
+  height: 6rem;
+  width: 22rem;
+  object-fit: contain;
+}
+
+.form-container__logo img {
+  max-width: 100%;
+}
+
+.form-container__heading {
+  font-size: 4rem;
+}
+.form-container__signup {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.form-container__signup a {
+  color: var(--primary-color);
+  display: inline-block;
+}
+
+.form-container__terms {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.form-container__terms input {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: left;
+}
+
+.form-container__terms a {
+  color: var(--primary-color);
+}
+
+.form {
+  width: 100%;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.form__label {
+  display: block;
+}
+
+.form__input {
+  font-size: 2rem;
+  padding: 1.6rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.3019607843);
+  border-radius: 0.5rem;
+}
+
+.form__input::placeholder {
+  color: rgba(0, 0, 0, 0.3019607843);
+}
+
+.form__forgot-password {
+  text-align: right;
+  color: var(--primary-color);
+}
+
+.form__submit-button {
+  font-size: 2.4rem;
+  font-weight: 500;
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+  color: var(--color-white);
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.signup-form .form__next-button {
+  font-size: 2.4rem;
+  font-weight: 500;
+  background-color: #d9d9d9;
+  padding: 1.5rem;
+  color: #919191;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+/* No arrow in number input type */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Flag */
+.ph-flag {
+  position: absolute;
+  top: 30%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 20px;
+  background-image: url(../img/ph.jpg);
+  background-size: auto 100%;
+  background-position: left center;
+}
+
+.spacing {
+  opacity: 0;
+}
+
+.ph-flag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px; /* Adjust this value for spacing */
+  height: 100%;
+  border-right: 1px solid #ccc;
+}
+
+/* CSS for Register Page */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.toggle-buttons button {
+  width: 100%;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  border-bottom: 2px solid #ccc;
+  color: hsl(0, 0%, 80%);
+}
+
+.toggle-buttons button.active {
+  background-color: transparent;
+  color: #ff7116;
+  border-bottom-color: #ff7116;
+}
+
+.signup-form {
+  display: none;
+}
+
+.signup-form .form__group .active {
+  display: block;
+}
+
+.signup-form h1 {
+  margin-bottom: 10px;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff7116;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.phone-text-number {
+  position: absolute;
+  background-color: white;
+  margin: 5px;
+  font-size: 1.5rem;
+  color: #ff7116;
+  margin-left: 40px;
+  padding-inline: 5px;
+  margin-top: -8px;
+}
+
+.email-text-number {
+  position: absolute;
+  background-color: white;
+  margin: 5px;
+  font-size: 1.5rem;
+  color: #ff7116;
+  margin-left: 40px;
+  padding-inline: 5px;
+  margin-top: -9px;
+}
+
+#phone-flag-icon {
+  margin-top: -60px;
+}
+
+.form__group fi-ph {
+  margin: -60px;
+}
+
+#phone-number {
+  padding-left: 50px;
+}
+
+/* CSS orTerms and Conditions */
+.form__terms-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Adjust the gap as needed */
+  text-align: left; /* Align the entire group to the left */
+  white-space: nowrap; /* Prevent line breaks */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Style for the terms label */
+.terms-label {
+  display: flex;
+  align-items: center;
+}
+
+.terms-label input[type="checkbox"] {
+  order: -1;
+  margin-right: 8px;
+  /* Change the checkbox design and color */
+  appearance: none;
+  background-color: #cccccc; /* Change the background color */
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative; /* Required for the check icon */
+  width: 4px;
+  height: 4px;
+  transform: scale(65%);
+}
+
+.terms-label input[type="checkbox"]::before {
+  content: "\2713"; /* Unicode checkmark symbol */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px; /* Adjust the font size */
+  color: white; /* Checkmark color */
+  visibility: hidden;
+}
+
+.terms-label input[type="checkbox"]:checked::before {
+  visibility: visible;
+}
+
+.terms-label input[type="checkbox"]:checked {
+  background-color: #ff7116; /* Change the background color when checked */
+}
+
+/* Rest of your styles */
+
+.terms-label p {
+  text-decoration: none;
+  margin-top: -30px;
+  max-width: calc(100% - 1.5rem);
+}
+
+.terms-label a {
+  text-decoration: none;
+  margin-top: -30px;
+  max-width: calc(100% - 1.5rem);
+  color: #ff7116;
+}
+
+/* Copyright */
+.copyright {
+  position: fixed;
+  height: 8rem;
+  bottom: 0;
+  font-size: 1.75rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@media (max-width: 1440px) {
+  .form-container,
+  .form__signup-container {
+    padding: 5rem 10rem;
+  }
+
+  html {
+    font-size: 48%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .form-container,
+  .form__signup-container {
+    padding: 4rem 8rem;
+  }
+
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-container,
+  .form__signup-container {
+    padding: 4rem 7rem;
+    width: 100%;
+  }
+
+  html {
+    font-size: 43%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container,
+  .form__signup-container {
+    padding: 5rem 5rem;
+  }
+
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 320px) {
+  .form-container,
+  .form__signup-container {
+    padding: 3rem 3rem;
+  }
+
+  html {
+    font-size: 35%;
+  }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style.css"
+    />
+    <title>SellEasy</title>
+  </head>
+  <body class="global-reset login-signup-page">
+    <div class="background">
+      <div></div>
+    </div>
+    <div class="form-container">
+      <div class="form-container__logo">
+        <img
+          src="img/logo.png"
+          alt="Your Logo"
+        />
+      </div>
+      <h1 class="form-container__heading">Log in</h1>
+      <form class="form">
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="text"
+            id="email"
+            name="email"
+            required
+            placeholder="Phone Number / Email"
+          />
+        </div>
+
+        <div class="form__group">
+          <input
+            class="form__input"
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Please enter your password"
+          />
+
+          <div class="form__forgot-password">
+            <a
+              class="form__forgot-password-link"
+              href="./reset.html"
+              >Reset Password?</a
+            >
+          </div>
+        </div>
+
+        <button
+          class="form__submit-button"
+          type="submit"
+        >
+          Log In
+        </button>
+      </form>
+      <p class="form-container__signup">
+        New account?
+        <a
+          class="form-container__signup-link"
+          href="./register.html"
+          >Sign Up</a
+        >
+      </p>
+    </div>
+    <footer class="copyright">&copy <script type="text/javascript">document.write( new Date().getFullYear() );</script> Copyright SellEasy</footer>
+  </body>
+</html>
